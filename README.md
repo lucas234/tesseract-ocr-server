@@ -1,14 +1,14 @@
-#### 安装与应用
+## 安装与应用
 
-1.克隆代码：`git clone https://github.com/lucas234/docker-tesseract `  
+1. 克隆代码：`git clone https://github.com/lucas234/docker-tesseract `  
 
-2.构建`docker`镜像：`docker build -t tesseract .`
+2. 构建`docker`镜像：`docker build -t tesseract .`
 
-3.运行镜像：`docker run  -itd -p 8888:5000 --name tesseract-server  tesseract`，运行后会返回一个 `container id`
+3. 运行镜像：`docker run  -itd -p 8888:5000 --name tesseract-server  tesseract`，运行后会返回一个 `container id`
 
-4.或者直接拉取我已经上传的`docker`镜像
+4. 或者直接拉取我已经上传的`docker`镜像
 
-5.然后可以通过 http://localhost:8888/validate-code-recognition 来识别图片
+5. 然后可以通过 http://localhost:8888/validate-code-recognition 来识别图片
 
 ![api](./images/api.png)
 
@@ -64,7 +64,7 @@ print(response.text)
 # {"code":1,"data":{"text":"8814"},"msg":"success"}
 ```
 
-#### Tesseract 基础用法
+## Tesseract 基础用法
 
 安装Tesseract后，通过命令行查看是否安装成功：
 
@@ -109,7 +109,7 @@ print(response.text)
           bypassing hacks that are Tesseract-specific.
    ```
 
-#### Tips
+## Tips
 
 1. 下载图片
 
@@ -142,7 +142,7 @@ print(response.text)
    - [tessdata_fast](https://github.com/tesseract-ocr/tessdata_fast)
 
 
-#### 参考：
+## 参考：
 
 1. [https://github.com/madmaze/pytesseract](https://github.com/madmaze/pytesseract)
 2. [https://nanonets.com/blog/ocr-with-tesseract/](https://nanonets.com/blog/ocr-with-tesseract/)
