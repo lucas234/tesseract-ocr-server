@@ -1,6 +1,6 @@
 ##### 安装
 
-克隆代码：`git clone  `  
+克隆代码：`git clone https://github.com/lucas234/docker-tesseract `  
 
 构建`docker`镜像：`docker build -t tesseract .`
 
