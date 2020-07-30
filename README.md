@@ -1,12 +1,16 @@
-##### 安装
+## 用途
+主要用于识别简单的图形验证码，免去配置（通常用到时，各种环境问题。。。），一步到位，直接调用接口识别图形验证码。简单的验证码识别率，还是可以的，针对不同的验证码，需要不同的图片处理来保证识别率，可以进行自己的场景自行修改。
 
-克隆代码：`git clone  `  
+## 安装与应用
 
-构建`docker`镜像：`docker build -t tesseract .`
+1. 克隆代码：`git clone https://github.com/lucas234/docker-tesseract `  
 
-运行镜像：`docker run  -itd -p 8888:5000 --name tesseract-server  tesseract`，运行后会返回一个 `container id`
+2. 构建`docker`镜像：`docker build -t tesseract .`
 
-或者直接拉取我已经上传的`docker`镜像
+3. 运行镜像：`docker run  -itd -p 8888:5000 --name tesseract-server  tesseract`，运行后会返回一个 `container id`
+
+
+**或者直接拉取我已经上传的`docker`镜像：`docker run -it -p 8888:5000 liulucas/tesseract`**
 
 然后可以通过 http://localhost:8888/validate-code-recognition 来识别图片
 
@@ -14,11 +18,11 @@
 
 
 
-HTTP 方法：`POST`
+**HTTP 方法：`POST`**
 
-请求URL： `http://localhost:8888/validate-code-recognitio`
+**请求URL：** `http://localhost:8888/validate-code-recognitio`
 
-请求参数：
+**请求参数：**
 
 | 参数    | 是否必选          | 类型   | 描述                                                         |
 | ------- | ----------------- | ------ | ------------------------------------------------------------ |
@@ -29,7 +33,7 @@ HTTP 方法：`POST`
 | `oem`   | 否                | int    | 范围：0-3                                                    |
 | `psm`   | 否                | int    | 范围：0-13                                                   |
 
-返回示例：
+**返回示例：**
 
 ```json
 {
@@ -41,7 +45,7 @@ HTTP 方法：`POST`
 }
 ```
 
-请求代码示例：
+**请求代码示例：**
 
 ```shell
 curl -X POST http://localhost:8888/validate-code-recognition -H "content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW" -F "image=@C:\images\8814.png" -F flag=True -F oem=3 -F psm=6
@@ -64,7 +68,7 @@ print(response.text)
 # {"code":1,"data":{"text":"8814"},"msg":"success"}
 ```
 
-##### Tesseract 基础用法
+## Tesseract 基础用法
 
 安装Tesseract后，通过命令行查看是否安装成功：
 
@@ -109,7 +113,7 @@ print(response.text)
           bypassing hacks that are Tesseract-specific.
    ```
 
-##### Tips
+## Tips
 
 1. 下载图片
 
@@ -142,7 +146,7 @@ print(response.text)
    - [tessdata_fast](https://github.com/tesseract-ocr/tessdata_fast)
 
 
-##### 参考：
+## 参考：
 
 1. [https://github.com/madmaze/pytesseract](https://github.com/madmaze/pytesseract)
 2. [https://nanonets.com/blog/ocr-with-tesseract/](https://nanonets.com/blog/ocr-with-tesseract/)
