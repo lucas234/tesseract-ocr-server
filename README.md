@@ -1,24 +1,24 @@
 #### 安装与应用
 
-克隆代码：`git clone https://github.com/lucas234/docker-tesseract `  
+1.克隆代码：`git clone https://github.com/lucas234/docker-tesseract `  
 
-构建`docker`镜像：`docker build -t tesseract .`
+2.构建`docker`镜像：`docker build -t tesseract .`
 
-运行镜像：`docker run  -itd -p 8888:5000 --name tesseract-server  tesseract`，运行后会返回一个 `container id`
+3.运行镜像：`docker run  -itd -p 8888:5000 --name tesseract-server  tesseract`，运行后会返回一个 `container id`
 
-或者直接拉取我已经上传的`docker`镜像
+4.或者直接拉取我已经上传的`docker`镜像
 
-然后可以通过 http://localhost:8888/validate-code-recognition 来识别图片
+5.然后可以通过 http://localhost:8888/validate-code-recognition 来识别图片
 
 ![api](./images/api.png)
 
 
 
-HTTP 方法：`POST`
+**HTTP 方法：`POST`**
 
-请求URL： `http://localhost:8888/validate-code-recognitio`
+**请求URL：** `http://localhost:8888/validate-code-recognitio`
 
-请求参数：
+**请求参数：**
 
 | 参数    | 是否必选          | 类型   | 描述                                                         |
 | ------- | ----------------- | ------ | ------------------------------------------------------------ |
@@ -29,7 +29,7 @@ HTTP 方法：`POST`
 | `oem`   | 否                | int    | 范围：0-3                                                    |
 | `psm`   | 否                | int    | 范围：0-13                                                   |
 
-返回示例：
+**返回示例：**
 
 ```json
 {
@@ -41,7 +41,7 @@ HTTP 方法：`POST`
 }
 ```
 
-请求代码示例：
+**请求代码示例：**
 
 ```shell
 curl -X POST http://localhost:8888/validate-code-recognition -H "content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW" -F "image=@C:\images\8814.png" -F flag=True -F oem=3 -F psm=6
