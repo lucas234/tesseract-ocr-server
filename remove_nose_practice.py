@@ -54,7 +54,6 @@ def remove_nose(picture_name, threshold=200):
 
 image = cv2.imread('./images/validate_code.jpg')
 morphology(image)
-# imag = remove_noise("morphology.jpg")
 remove_nose("morphology.jpg")
 # black_and_white_conversion("remove_nose.jpg")
 print(pytesseract.image_to_string("remove_nose.jpg"))
