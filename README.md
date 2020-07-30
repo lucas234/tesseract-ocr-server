@@ -10,7 +10,7 @@
 3. 运行镜像：`docker run  -itd -p 8888:5000 --name tesseract-server  tesseract`，运行后会返回一个 `container id`
 
 
-**或者直接拉取我已经上传的`docker`镜像：`docker run -it -p 8888:5000 liulucas/tesseract`**
+**或者拉取我已经上传的`docker`镜像，直接运行：` docker run -it -p 8888:5000 liulucas/tesseract`**
 
 然后可以通过 http://localhost:8888/validate-code-recognition 来识别图片
 
